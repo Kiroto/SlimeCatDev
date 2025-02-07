@@ -12,11 +12,13 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+
+    <link href="stylesheet.css" rel="stylesheet" />
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4 text-center">
           <img
             src="https://picsum.photos/200"
             class="img-thumbnail"
@@ -25,26 +27,83 @@
           />
           <!-- Picture -->
         </div>
-        <div class="col-sm">
-          Name, title, etc
+        <div class="col-sm my-auto">
+          <h1 class="display-1">Hi, I'm Jerry</h1>
+          <p class="lead">(You can check me out here!)</p>
           <!-- Name, Title (Subtitle) -->
         </div>
       </div>
       <div class="row">
         <div class="col-sm-4">
-          Timeline
-          <!-- Timeline -->
+          <h1>Timeline</h1>
+          <div id="timeline-list"></div>
         </div>
         <div class="col-sm-4">
-          Skills
+          <h1>Skills</h1>
+          <div class="container" id="skill-grid-container">
+            <div class="row" id="skill-grid"></div>
+          </div>
           <!-- Skills -->
         </div>
         <div class="col-sm-4">
-          Tools
-          <!-- Tools -->
+          <h1>Tools</h1>
+          <div id="tool-list"></div>
         </div>
       </div>
     </div>
+
+    <!-- Templates -->
+    <template id="timeline-list-item-template">
+      <div class="container">
+        <div class="row">
+          <div class="col-3 my-auto text-center timeline-img-container">
+            <img
+              src="https://picsum.photos/100"
+              class="timeline-img img-app-like"
+            />
+          </div>
+          <div class="col-9 my-auto">
+            <div>
+              <h3 class="timeline-list-item-title">Timeline Title</h3>
+              <h6 class="timeline-list-item-description">
+                Software Engineering
+              </h6>
+              <h6 class="timeline-list-item-dates">Aug 2020 - Jan 2024</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="skill-grid-item-template">
+      <div class="col-4 container skill-grid-item">
+        <div class="row app-img-container mx-auto">
+          <img src="https://picsum.photos/100" class="img-app-like" />
+        </div>
+        <div class="row text-center">
+          <p class="skill-name">javaScript</p>
+        </div>
+      </div>
+    </template>
+
+    <template id="tool-list-item-template">
+      <div class="container tool-list-item">
+        <div class="row">
+          <div class="col-3 my-auto text-center tool-img-container">
+            <img
+              src="https://picsum.photos/100"
+              class="tool-img img-app-like"
+            />
+          </div>
+          <div class="col-9 my-auto">
+            <div>
+              <h3 class="tool-list-item-title">Timeline Title</h3>
+              <h6 class="tool-list-item-description">Software Engineering</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
 
     <!-- Bootstrap JS -->
     <script
@@ -52,5 +111,117 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Data Sources -->
+    <script src="data/timelineData.js"></script>
+    <script src="data/skillData.js"></script>
+    <script src="data/toolData.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+      // Add timeline Data
+
+      const addTimelineData = () => {
+        const timelineList = document.getElementById('timeline-list')
+        const timelineListItemTemplate = document.getElementById(
+          'timeline-list-item-template'
+        )
+        timelineData.forEach(timelineDatum => {
+          const timelineListItem =
+            timelineListItemTemplate.content.cloneNode(true)
+
+          if (timelineDatum.img) {
+            const timelineListItemImage =
+              timelineListItem.querySelector('.timeline-img')
+            timelineListItemImage.src = timelineDatum.img
+          }
+
+          const timelineListItemTitle = timelineListItem.querySelector(
+            '.timeline-list-item-title'
+          )
+          timelineListItemTitle.textContent = timelineDatum.name
+
+          const timelineListItemDescription = timelineListItem.querySelector(
+            '.timeline-list-item-description'
+          )
+          timelineListItemDescription.textContent = timelineDatum.description
+
+          const timelineListItemDates = timelineListItem.querySelector(
+            '.timeline-list-item-dates'
+          )
+          timelineListItemDates.textContent = `${timelineDatum.start} - ${timelineDatum.end}`
+
+          timelineList.appendChild(timelineListItem)
+        })
+      }
+
+      const addSkillData = () => {
+        const skillGrid = document.getElementById('skill-grid')
+        const skillGridItemTemplate = document.getElementById(
+          'skill-grid-item-template'
+        )
+        const demoAvailableClass = 'demo-available'
+        skillData.forEach(skillDatum => {
+          const skillGridItem = skillGridItemTemplate.content.cloneNode(true)
+
+          if (skillDatum.img) {
+            const skillGridItemImage = skillGridItem.querySelector('img')
+            skillGridItemImage.src = skillDatum.img
+          }
+
+          if (skillDatum.demo) {
+            const skillContainer =
+              skillGridItem.querySelector('.skill-grid-item')
+            skillContainer.classList.add(demoAvailableClass)
+          }
+
+          const skillGridItemName = skillGridItem.querySelector('.skill-name')
+
+          skillGridItemName.textContent = skillDatum.name
+
+          skillGrid.appendChild(skillGridItem)
+        })
+      }
+
+      const addToolData = () => {
+        const toolList = document.getElementById('tool-list')
+        const toolListItemTemplate = document.getElementById(
+          'tool-list-item-template'
+        )
+
+        const linkAvailableClass = 'link-available'
+
+        toolData.forEach(toolDatum => {
+          const toolListItem = toolListItemTemplate.content.cloneNode(true)
+
+          if (toolDatum.img) {
+            const toolListItemImage = toolListItem.querySelector('.tool-img')
+            toolListItemImage.src = toolDatum.img
+          }
+
+          const toolListItemTitle = toolListItem.querySelector(
+            '.tool-list-item-title'
+          )
+          toolListItemTitle.textContent = toolDatum.name
+
+          const toolListItemDescription = toolListItem.querySelector(
+            '.tool-list-item-description'
+          )
+
+          if (toolDatum.link) {
+            const toolContainer = toolListItem.querySelector('.tool-list-item')
+            toolContainer.classList.add(linkAvailableClass)
+          }
+
+          toolListItemDescription.textContent = toolDatum.description
+
+          toolList.appendChild(toolListItem)
+        })
+      }
+
+      addTimelineData()
+      addSkillData()
+      addToolData()
+    </script>
   </body>
 </html>
