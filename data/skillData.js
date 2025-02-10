@@ -4,10 +4,6 @@ const skillData = {
     },
     skills: [
         {
-            img: "usaFlag.jpg",
-            name: "English",
-        },
-        {
             img: "jsLogo.png",
             name: "JavaScript",
             demo: "jsdemo.html",
