@@ -119,22 +119,25 @@
 
     <template id="tool-list-item-template">
       <div class="container tool-list-item">
-        <div class="row">
-          <div class="col-3 my-auto text-center tool-img-container">
-            <img
-              src="https://picsum.photos/100"
-              class="tool-img img-app-like"
-            />
-          </div>
-
-          <div class="col-9 my-auto">
+        <div class="overlaid">
+          <div class="icon-overlay">
             <img
               src="img/general/ExternalLink.png"
               class="link-icon pixel-icon"
               hidden
             />
-            <h3 class="tool-list-item-title">Timeline Title</h3>
-            <h6 class="tool-list-item-description">Software Engineering</h6>
+          </div>
+          <div class="row">
+            <div class="col-3 my-auto text-center tool-img-container">
+              <img
+                src="https://picsum.photos/100"
+                class="tool-img img-app-like"
+              />
+            </div>
+            <div class="col-9 my-auto">
+              <h3 class="tool-list-item-title">Timeline Title</h3>
+              <h6 class="tool-list-item-description">Software Engineering</h6>
+            </div>
           </div>
         </div>
       </div>
