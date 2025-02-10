@@ -6,7 +6,7 @@ const toolData = {
         {
             img: "intelliJ_IDEA.png",
             name: "IntelliJ IDEA",
-            description: "The Leading Java and Kotlin IDE)",
+            description: "The Leading Java and Kotlin IDE",
             link: "https://www.jetbrains.com/idea/"
         },
         {
