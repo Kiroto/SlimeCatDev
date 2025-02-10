@@ -164,6 +164,9 @@
                 linkIconContainer.removeAttribute("hidden")
                 const toolContainer = toolListItem.querySelector('.tool-list-item')
                 toolContainer.classList.add(linkAvailableClass)
+                toolContainer.addEventListener("click", evt => {
+                    window.open(toolDatum.link,'_blank');
+                })
             }
 
             toolListItemDescription.textContent = toolDatum.description
