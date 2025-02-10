@@ -38,6 +38,8 @@ const skillData = {
         {
             img: "KotlinLogo.png",
             name: "Kotlin",
+            demo: "kotlindemo.html",
+
         },
         {
             img: "SpringLogo.png",
