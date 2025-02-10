@@ -116,7 +116,9 @@
             if (skillDatum.demo) {
                 const skillContainer = skillGridItem.querySelector('.skill-grid-item')
                 const demoIconContainer = skillGridItem.querySelector(".demo-icon")
-                demoIconContainer.removeAttribute("hidden")
+                if (demoIconContainer) {
+                    demoIconContainer.removeAttribute("hidden")
+                }
                 skillContainer.classList.add(demoAvailableClass)
                 skillContainer.addEventListener("click", evt => {
                     loadSubpageModal(skillDatum.demo, skillDatum.name + " demo", cacheSource)
@@ -161,11 +163,13 @@
 
             if (toolDatum.link) {
                 const linkIconContainer = toolListItem.querySelector(".link-icon")
-                linkIconContainer.removeAttribute("hidden")
+                if (linkIconContainer) {
+                    linkIconContainer.removeAttribute("hidden")
+                }
                 const toolContainer = toolListItem.querySelector('.tool-list-item')
                 toolContainer.classList.add(linkAvailableClass)
                 toolContainer.addEventListener("click", evt => {
-                    window.open(toolDatum.link,'_blank');
+                    window.open(toolDatum.link, '_blank');
                 })
             }
 
