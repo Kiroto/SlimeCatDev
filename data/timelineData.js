@@ -30,6 +30,13 @@ const timelineData = {
             description: "QA & Automated test engineer",
             start: "Dec 2018",
             end: "Mar 2020"
+        },
+        {
+            img: "Computer.png",
+            name: "Spare Time",
+            description: "Hobbies & Tiny Projects",
+            start: "Circa 2014",
+            end: "Today"
         }
     ]
 }
