@@ -68,7 +68,6 @@
             this is a lot of information yadda
           </div>
         </div>
-        
       </div>
     </div>
 
@@ -97,11 +96,23 @@
 
     <template id="skill-grid-item-template">
       <div class="col-4 container skill-grid-item">
-        <div class="row app-img-container mx-auto">
-          <img src="https://picsum.photos/100" class="img-app-like" />
-        </div>
-        <div class="row text-center">
-          <p class="skill-name">javaScript</p>
+        <div class="overlaid">
+          <div class="icon-overlay">
+            <img
+              src="img/general/PlayDemo.png"
+              class="demo-icon pixel-icon"
+              hidden
+            />
+          </div>
+          <div class="row app-img-container mx-auto">
+            <img
+              src="https://picsum.photos/100"
+              class="img-app-like skill-img"
+            />
+          </div>
+          <div class="row text-center">
+            <p class="skill-name">javaScript</p>
+          </div>
         </div>
       </div>
     </template>
@@ -115,11 +126,15 @@
               class="tool-img img-app-like"
             />
           </div>
+
           <div class="col-9 my-auto">
-            <div>
-              <h3 class="tool-list-item-title">Timeline Title</h3>
-              <h6 class="tool-list-item-description">Software Engineering</h6>
-            </div>
+            <img
+              src="img/general/ExternalLink.png"
+              class="link-icon pixel-icon"
+              hidden
+            />
+            <h3 class="tool-list-item-title">Timeline Title</h3>
+            <h6 class="tool-list-item-description">Software Engineering</h6>
           </div>
         </div>
       </div>

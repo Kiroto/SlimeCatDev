@@ -109,12 +109,14 @@
             const skillGridItem = skillGridItemTemplate.content.cloneNode(true)
 
             if (skillDatum.img) {
-                const skillGridItemImage = skillGridItem.querySelector('img')
+                const skillGridItemImage = skillGridItem.querySelector('.skill-img')
                 skillGridItemImage.src = skillImageSource + skillDatum.img
             }
 
             if (skillDatum.demo) {
                 const skillContainer = skillGridItem.querySelector('.skill-grid-item')
+                const demoIconContainer = skillGridItem.querySelector(".demo-icon")
+                demoIconContainer.removeAttribute("hidden")
                 skillContainer.classList.add(demoAvailableClass)
                 skillContainer.addEventListener("click", evt => {
                     loadSubpageModal(skillDatum.demo, skillDatum.name + " demo", cacheSource)
@@ -158,6 +160,8 @@
             )
 
             if (toolDatum.link) {
+                const linkIconContainer = toolListItem.querySelector(".link-icon")
+                linkIconContainer.removeAttribute("hidden")
                 const toolContainer = toolListItem.querySelector('.tool-list-item')
                 toolContainer.classList.add(linkAvailableClass)
             }

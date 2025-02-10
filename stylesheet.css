@@ -60,3 +60,26 @@ body {
 .tool-list-item.link-available:hover {
   background-color: #00c3ff33;
 }
+
+
+.icon-overlay {
+  position:absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.pixel-icon {
+  filter: none;
+  background-color: #eeeeeeaa;
+  min-width: 1em;
+  min-height: 1em;
+  padding: 0.2em;
+  border-radius: 0.2em;
+}
+
+.overlaid {
+  position: relative;
+}
