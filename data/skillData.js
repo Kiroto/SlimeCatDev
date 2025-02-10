@@ -1,24 +1,54 @@
-const skillData = [
-    {
-        img: "img/jsLogo.png",
-        name: "javaScript",
-        demo: "something here"
-    }, {
-        img: "img/goLogoBlue.png",
-        name: "golang",
-        demo: "something here",
-
-    }, {
-        img: "img/usaFlag.jpg",
-        name: "english",
-    }, {
-        img: "",
-        name: "python",
-    }, {
-        img: "",
-        name: "Java",
-    }, {
-        img: "",
-        name: "Kotlin",
-    }
-]
+const skillData = {
+    meta: {
+        imgSource: "img/skills/"
+    },
+    skills: [
+        {
+            img: "usaFlag.jpg",
+            name: "English",
+        },
+        {
+            img: "jsLogo.png",
+            name: "JavaScript",
+        },
+        {
+            img: "reactLogo.png",
+            name: "React",
+        },{
+            img: "SeleniumLogo.png",
+            name: "Selenium",
+        },
+        {
+            img: "Csharp.png",
+            name: "C#",
+        },
+        {
+            img: "goLogoBlue.png",
+            name: "Golang",
+        },
+        {
+            img: "PythonLogo.webp",
+            name: "Python",
+        },
+        {
+            img: "Java-Logo.png",
+            name: "Java",
+        },
+        {
+            img: "KotlinLogo.png",
+            name: "Kotlin",
+        },
+        {
+            img: "SpringLogo.png",
+            name: "Spring Boot",
+        },
+        {
+            img: "PHPLogo.png",
+            name: "PHP",
+        },
+        {
+            img: "SQL.png",
+            name: "SQL",
+        }
+    ]
+}
