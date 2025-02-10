@@ -1,5 +1,61 @@
 // Don't clutter environment
 (() => {
+    class PageCacheSource {
+        constructor() { }
+
+        getValue(key) {
+            console.log(`Base PageCacheSource.getKey method called. Cannot get key ${key}`)
+        }
+
+        setValue(key, value) {
+            console.log(`Base PageCacheSource.setKey method called. Cannot set key ${key}`)
+        }
+    }
+
+    class InMemoryCacheSource extends PageCacheSource {
+        constructor() {
+            super()
+            this.memory = {}
+        }
+
+        getValue(key) {
+            return this.memory[key]
+        }
+
+        setValue(key, value) {
+            this.memory[key] = value
+        }
+    }
+
+    class LocalhostCacheSource extends PageCacheSource {
+        CACHE_TIMESTAMP_TAG = "_TIMESTAMP"
+        CACHE_TAG = "CACHED_"
+
+        constructor(
+            cacheExpirationTime = 60 * 60 * 1000 /*1 hour*/
+        ) {
+            super()
+            this.cacheExpirationTime = cacheExpirationTime
+        }
+
+        getKey(key) { return this.CACHE_TAG + key + this.CACHE_TIMESTAMP_TAG }
+        getTimestampKey(key) { return this.getKey(key) + this.CACHE_TIMESTAMP_TAG }
+
+        getValue(key) {
+            const cacheTimestamp = localStorage.getItem(this.getTimestampKey(key))
+            if (!cacheTimestamp || (Date.now() - cacheTimestamp > this.cacheExpirationTime)) { // Expired or non-existant
+                return undefined;
+            }
+            const cachedData = localStorage.getItem(key);
+            return cachedData
+        }
+
+        setValue(key, value) {
+            localStorage.setItem(getTimestampKey(key), Date.now())
+            localStorage.setItem(key, value)
+        }
+    }
+
 
     const addTimelineData = () => {
         const timelineList = document.getElementById('timeline-list')
@@ -58,9 +114,11 @@
             }
 
             if (skillDatum.demo) {
-                const skillContainer =
-                    skillGridItem.querySelector('.skill-grid-item')
+                const skillContainer = skillGridItem.querySelector('.skill-grid-item')
                 skillContainer.classList.add(demoAvailableClass)
+                skillContainer.addEventListener("click", evt => {
+                    loadSubpageModal(skillDatum.demo, skillDatum.name + " demo", cacheSource)
+                })
             }
 
             const skillGridItemName = skillGridItem.querySelector('.skill-name')
@@ -109,6 +167,38 @@
             toolList.appendChild(toolListItem)
         })
     }
+
+    const cacheSource = new InMemoryCacheSource();
+
+    /**
+    * Loads a subpage from the site and shows it in the modal window.
+    * @param {string} subpageLink 
+    * @param {PageCacheSource} cacheSource 
+    */
+    const loadSubpageCached = async (subpageLink, cacheSource) => {
+        const cachedSite = cacheSource.getValue(subpageLink);
+        if (cachedSite) return cachedSite;
+
+        const response = await fetch(`/src/${subpageLink}`);
+        if (!response.ok) return `<p>Could not load subpage ${subpageLink}. Status ${response.status} - ${response.statusText}</p>`;
+
+        const page = response.text();
+        cacheSource.setValue(subpageLink, page);
+        return page;
+    }
+
+    const modalElement = new bootstrap.Modal(document.getElementById("demos-modal"));
+
+
+    const loadSubpageModal = async (subpageLink, modalTitle, cacheSource) => {
+        const subpage = await loadSubpageCached(subpageLink, cacheSource)
+        const modalElementContent = document.getElementById("demos-modal-content")
+        const modalElementTitle = document.getElementById("demos-modal-title")
+        modalElementTitle.innerText = modalTitle
+        modalElementContent.innerHTML = subpage
+        modalElement.show();
+    }
+
 
     addTimelineData()
     addSkillData()

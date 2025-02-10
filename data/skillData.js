@@ -10,11 +10,12 @@ const skillData = {
         {
             img: "jsLogo.png",
             name: "JavaScript",
+            demo: "jsdemo.html",
         },
         {
             img: "reactLogo.png",
             name: "React",
-        },{
+        }, {
             img: "SeleniumLogo.png",
             name: "Selenium",
         },
