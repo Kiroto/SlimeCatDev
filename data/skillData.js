@@ -50,24 +50,7 @@ const skillData = {
             img: "SQL.png",
             name: "SQL",
         },
-        {
-            img: "intelliJ_IDEA.png",
-            name: "IntelliJ IDEA",
-            description: "The Leading Java and Kotlin IDE",
-            link: "https://www.jetbrains.com/idea/"
-        },
-        {
-            img: "JetBrains_Rider.png",
-            name: "JetBrains Rider",
-            description: "Cross-platform .NET IDE",
-            link: "https://www.jetbrains.com/rider/"
-        },
-        {
-            img: "VSC.png",
-            name: "Visual Studio Code",
-            description: "Scripts & Everything else",
-            link: "https://code.visualstudio.com/"
-        },
+
         {
             img: "UnityLogo.png",
             name: "Unity",
@@ -91,6 +74,9 @@ const skillData = {
             name: "RPG Maker MZ",
             description: "Game Engine",
             link: "https://www.rpgmakerweb.com/products/rpg-maker-mz"
+        }, {
+            img: "nodejs.png",
+            name: "NodeJS",
         }
     ]
 }

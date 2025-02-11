@@ -10,7 +10,7 @@ const timelineData = {
             start: "Feb 2023",
             end: "Feb 2025",
             page: "obitus.html",
-            skills: ["JavaScript", "C#", "Python", "JetBrains Rider", "Visual Studio Code", "Unity", "FLStudio"]
+            skills: ["JavaScript", "C#", "Python", "Unity", "FLStudio"]
         },
         {
             img: "intecLogo.png",
@@ -18,7 +18,9 @@ const timelineData = {
             description: "Software Engineering (GPA 3.69/4)",
             start: "Aug 2020",
             end: "Jan 2024",
-            skills: ["JavaScript", "C#", "Python", "Visual Studio Code", "Aseprite"]
+            page: "intec.html",
+
+            skills: ["JavaScript", "C#", "Python", "Aseprite"]
 
         },
         {
@@ -27,7 +29,9 @@ const timelineData = {
             description: "Fullstack Developer",
             start: "Apr 2020",
             end: "Feb 2023",
-            skills: ["Java", "Kotlin", "PHP", "SQL", "Spring Boot", "IntelliJ IDEA", "Visual Studio Code"]
+            page: "singularsound.html",
+
+            skills: ["Java", "Kotlin", "PHP", "SQL", "Spring Boot"]
 
         },
         {
@@ -36,7 +40,9 @@ const timelineData = {
             description: "QA & Automated test engineer",
             start: "Dec 2018",
             end: "Mar 2020",
-            skills: ["JavaScript", "Python", "Selenium", "Golang", "React", "Visual Studio Code", "NodeJS"]
+            page: "intellisys.html",
+
+            skills: ["JavaScript", "Python", "Selenium", "Golang", "React", "NodeJS"]
         },
         {
             img: "Computer.png",
@@ -44,7 +50,9 @@ const timelineData = {
             description: "Hobbies & Tiny Projects",
             start: "Circa 2014",
             end: "Today",
-            skills: ["JavaScript", "Python", "Golang", "Kotlin", "React", "SQL", "NodeJS", "Visual Studio Code", "RPG Maker MZ"]
+            page: "sparetime.html",
+
+            skills: ["JavaScript", "Python", "C#", "Golang", "Java", "Kotlin", "React", "SQL", "NodeJS",  "Unity", "FLStudio", "RPG Maker MZ"]
 
         }
     ]
