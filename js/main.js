@@ -105,6 +105,7 @@
         const skillImageSource = skillData.meta.imgSource
 
         const demoAvailableClass = 'demo-available'
+        const demosSubfolder = "demos"
         skillDataList.forEach(skillDatum => {
             const skillGridItem = skillGridItemTemplate.content.cloneNode(true)
 
@@ -121,7 +122,7 @@
                 }
                 skillContainer.classList.add(demoAvailableClass)
                 skillContainer.addEventListener("click", evt => {
-                    loadSubpageModal(skillDatum.demo, skillDatum.name + " demo", cacheSource)
+                    loadSubpageModal(`${demosSubfolder}/${skillDatum.demo}`, skillDatum.name + " demo", cacheSource)
                 })
             }
 
