@@ -18,6 +18,7 @@ const skillData = {
         {
             img: "Csharp.png",
             name: "C#",
+            demo:"csdemo.html"
         },
         {
             img: "goLogoBlue.png",
