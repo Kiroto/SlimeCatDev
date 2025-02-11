@@ -59,11 +59,12 @@
 
     const getSkill = (name) => {
         return skillData.skills.find(it => it.name == name);
-
     }
 
     const getSkillImage = (name) => {
-        return skillData.meta.imgSource + getSkill(name).img
+        const skill = getSkill(name)
+        if (skill === undefined) return "img/skills/unknownSkill.png"
+        return skillData.meta.imgSource + skill.img
     }
 
     const addTimelineData = () => {
@@ -109,10 +110,14 @@
             }
             if (timelineDatum.skills && timelineDatum.skills.length > 0) {
                 const timelineSkills = timelineListItem.querySelector(".timeline-list-item-skill-list");
-                timelineDatum.skills.forEach(skill => {
+                timelineDatum.skills.forEach(skillName => {
                     const timelineSkillItem = timelineSkillTemplate.content.cloneNode(true)
                     const timelineSkillImg = timelineSkillItem.querySelector(".skill-img")
-                    timelineSkillImg.src = getSkillImage(skill)
+                    timelineSkillImg.src = getSkillImage(skillName)
+                    timelineSkillImg.alt = skillName
+                    timelineSkillImg.title = skillName
+
+
                     timelineSkills.appendChild(timelineSkillItem)
                 })
                 timelineSkills.removeAttribute("hidden")
