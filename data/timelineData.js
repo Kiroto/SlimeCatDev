@@ -8,14 +8,18 @@ const timelineData = {
             name: "Obitus Games",
             description: "Lead Audio Director; Game Developer",
             start: "Feb 2023",
-            end: "Feb 2025"
+            end: "Feb 2025",
+            page: "obitus.html",
+            skills: ["JavaScript", "C#", "Python", "SQL", "PHP"]
         },
         {
             img: "intecLogo.png",
             name: "Intec",
             description: "Software Engineering (GPA 3.69/4)",
             start: "Aug 2020",
-            end: "Jan 2024"
+            end: "Jan 2024",
+            skills: ["JavaScript", "C#", "Python"]
+
         },
         {
             img: "SSLogo.png",

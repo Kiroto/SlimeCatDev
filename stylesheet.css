@@ -1,5 +1,5 @@
 body {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .timeline-img-container,
@@ -18,8 +18,9 @@ body {
 }
 
 .app-img-container {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -28,6 +29,7 @@ body {
 
 .skill-grid-item {
   padding: 0.5em;
+  padding-left: 1em;
   border-radius: 0.5em;
   transition-property: background-color;
   transition-duration: 300ms;
@@ -38,13 +40,12 @@ body {
   cursor: pointer;
 }
 
-.skill-grid-item.demo-available:hover {
-  background-color: #3cff0033;
-}
-
 .skill-grid-item:hover {
   background-color: #00000033;
+  transition-property: background-color;
+  transition-duration: 60ms;
 }
+
 
 .tool-list-item {
   padding: 1em;
@@ -57,13 +58,16 @@ body {
   margin-top: 0.5em;
 }
 
-.tool-list-item.link-available:hover {
+.demo-available:hover {
+  background-color: #29b10065;
+}
+
+.link-available:hover {
   background-color: #00c3ff33;
 }
 
-
 .icon-overlay {
-  position:absolute;
+  position: absolute;
   top: 0;
   right: 0;
   display: flex;
@@ -82,4 +86,8 @@ body {
 
 .overlaid {
   position: relative;
+}
+
+.timeline-skill {
+  padding: 5px;
 }

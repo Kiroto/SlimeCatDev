@@ -34,21 +34,21 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-4">
-          <h1>Timeline</h1>
-          <div id="timeline-list"></div>
-        </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <h1>Skills</h1>
           <div class="container" id="skill-grid-container">
             <div class="row" id="skill-grid"></div>
           </div>
-          <!-- Skills -->
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-9 timeline-side">
+          <h1>Timeline</h1>
+          <div id="timeline-list"></div>
+        </div>
+
+        <!-- <div class="col-sm-4">
           <h1>Tools</h1>
           <div id="tool-list"></div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -87,6 +87,7 @@
     </div>
 
     <!-- Templates -->
+    <!-- Timeline item -->
     <template id="timeline-list-item-template">
       <div class="container">
         <div class="row">
@@ -97,7 +98,7 @@
             />
           </div>
           <div class="col-9 my-auto">
-            <div>
+            <div class="timeline-list-item-header">
               <h3 class="timeline-list-item-title">Timeline Title</h3>
               <h6 class="timeline-list-item-description">
                 Software Engineering
@@ -106,11 +107,18 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-2 container">
+            <div class="row timeline-list-item-skill-list" hidden></div>
+          </div>
+          <div class="col-10 timeline-list-item-body" hidden></div>
+        </div>
       </div>
     </template>
 
+    <!-- Skill list item -->
     <template id="skill-grid-item-template">
-      <div class="col-4 container skill-grid-item">
+      <div class="container skill-grid-item">
         <div class="overlaid">
           <div class="icon-overlay">
             <img
@@ -118,24 +126,6 @@
               class="demo-icon pixel-icon"
               hidden
             />
-          </div>
-          <div class="row app-img-container mx-auto">
-            <img
-              src="https://picsum.photos/100"
-              class="img-app-like skill-img"
-            />
-          </div>
-          <div class="row text-center">
-            <p class="skill-name">javaScript</p>
-          </div>
-        </div>
-      </div>
-    </template>
-
-    <template id="tool-list-item-template">
-      <div class="container tool-list-item">
-        <div class="overlaid">
-          <div class="icon-overlay">
             <img
               src="img/general/ExternalLink.png"
               class="link-icon pixel-icon"
@@ -146,15 +136,25 @@
             <div class="col-3 my-auto text-center tool-img-container">
               <img
                 src="https://picsum.photos/100"
-                class="tool-img img-app-like"
+                class="img-app-like skill-img"
               />
             </div>
             <div class="col-9 my-auto">
-              <h3 class="tool-list-item-title">Timeline Title</h3>
-              <h6 class="tool-list-item-description">Software Engineering</h6>
+              <h4 class="skill-name">Timeline Title</h4>
+              <h6 class="skill-description" hidden>Software Engineering</h6>
             </div>
           </div>
         </div>
+      </div>
+    </template>
+
+    <!-- Timeline skill -->
+    <template id="timeline-skill-template">
+      <div class="col-4 timeline-skill">
+        <img
+          src="img/general/PlayDemo.png"
+          class="img-app-like skill-img"
+        />
       </div>
     </template>
 
