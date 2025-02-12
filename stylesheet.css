@@ -30,9 +30,10 @@ body {
 .skill-grid-item {
   padding: 0.5em;
   padding-left: 1em;
-  border-radius: 0.5em;
+  border-radius: 2em 0.5em 2em 0.5em;
   transition-property: background-color;
   transition-duration: 300ms;
+  cursor: default;
 }
 
 .demo-available,
@@ -45,7 +46,6 @@ body {
   transition-property: background-color;
   transition-duration: 60ms;
 }
-
 
 .tool-list-item {
   padding: 1em;
@@ -96,4 +96,10 @@ body {
   background-color: #00000011;
   padding: 0.5em;
   border-radius: 1em;
+}
+
+.skill-grid-container {
+  background-color: #00000011;
+  border-radius: 1em;
+  padding: 1em;
 }
