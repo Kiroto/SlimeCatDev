@@ -103,3 +103,43 @@ body {
   border-radius: 1em;
   padding: 1em;
 }
+
+@media only screen and (max-width: 575px) {
+  .skills-column {
+    display: none;
+  }
+}
+
+
+
+@media only screen and (max-width: 800px) {
+  .timeline-skill-list-column {
+    display: none;
+    width: 0px;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .timeline-list-item-skill-list {
+    display: flex;
+  }
+
+  .timeline-skill {
+    width: 50%;
+  }
+
+  .skill-row {
+    display: block;
+    text-align: center;
+  }
+  .skill-info-column {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .skill-info-column {
+    display: none;
+  }
+}

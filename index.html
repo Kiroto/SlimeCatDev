@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-3 skills-column">
           <h1>Skills</h1>
           <div class="container skill-grid-container" id="skill-grid-container">
             <div class="row" id="skill-grid"></div>
@@ -92,7 +92,7 @@
               class="timeline-img img-app-like"
             />
           </div>
-          <div class="col-9 my-auto">
+          <div class="col my-auto">
             <div class="timeline-list-item-header">
               <h3 class="timeline-list-item-title">Timeline Title</h3>
               <h6 class="timeline-list-item-description">
@@ -103,7 +103,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-2 container">
+          <div class="col-2 container timeline-skill-list-column">
             <div class="row timeline-list-item-skill-list" hidden></div>
           </div>
           <div class="col-10 timeline-list-item-body" hidden></div>
@@ -127,16 +127,16 @@
               hidden
             />
           </div>
-          <div class="row">
-            <div class="col-3 my-auto text-center tool-img-container">
+          <div class="row skill-row">
+            <div class="col-3 my-auto mx-auto tool-img-container">
               <img
                 src="https://picsum.photos/100"
                 class="img-app-like skill-img"
               />
             </div>
-            <div class="col-9 my-auto">
-              <h4 class="skill-name">Timeline Title</h4>
-              <h6 class="skill-description" hidden>Software Engineering</h6>
+            <div class="col my-auto skill-info-column">
+              <h4 class="skill-name">Skill Name</h4>
+              <h6 class="skill-description" hidden>Skill Description</h6>
             </div>
           </div>
         </div>
@@ -146,10 +146,7 @@
     <!-- Timeline skill -->
     <template id="timeline-skill-template">
       <div class="col-4 timeline-skill">
-        <img
-          src="img/general/PlayDemo.png"
-          class="img-app-like skill-img"
-        />
+        <img src="img/general/PlayDemo.png" class="img-app-like skill-img" />
       </div>
     </template>
 
