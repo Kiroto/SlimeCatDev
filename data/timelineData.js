@@ -20,7 +20,7 @@ const timelineData = {
             end: "Jan 2024",
             page: "intec.html",
 
-            skills: ["JavaScript", "C#", "Python", "Aseprite"]
+            skills: ["JavaScript", "C#", "Python", "SQL", "Aseprite"]
 
         },
         {
@@ -31,7 +31,7 @@ const timelineData = {
             end: "Feb 2023",
             page: "singularsound.html",
 
-            skills: ["Java", "Kotlin", "PHP", "SQL", "Spring Boot"]
+            skills: ["Java", "Kotlin", "Gradle", "PHP", "SQL", "Spring Boot"]
 
         },
         {
@@ -42,7 +42,7 @@ const timelineData = {
             end: "Mar 2020",
             page: "intellisys.html",
 
-            skills: ["JavaScript", "Python", "Selenium", "Golang", "React", "NodeJS"]
+            skills: ["JavaScript", "React", "NodeJS", "Python", "Selenium", "Golang"]
         },
         {
             img: "Computer.png",
@@ -52,7 +52,7 @@ const timelineData = {
             end: "Today",
             page: "sparetime.html",
 
-            skills: ["JavaScript", "Python", "C#", "Golang", "Java", "Kotlin", "React", "SQL", "NodeJS",  "Unity", "FLStudio", "RPG Maker MZ"]
+            skills: ["JavaScript", "Python", "C#", "Golang", "Java", "Gradle", "Kotlin", "React", "Aseprite", "SQL", "NodeJS", "Unity", "FLStudio", "RPG Maker MZ"]
 
         }
     ]

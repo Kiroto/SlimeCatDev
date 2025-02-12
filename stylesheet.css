@@ -91,3 +91,9 @@ body {
 .timeline-skill {
   padding: 5px;
 }
+
+.timeline-list-item-skill-list {
+  background-color: #00000011;
+  padding: 0.5em;
+  border-radius: 1em;
+}

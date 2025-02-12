@@ -77,7 +77,7 @@
         const timelineDataList = timelineData.entries
         const timelineImgSource = timelineData.meta.imgSource
         const timelineContentFolder = "timeline"
-        timelineDataList.forEach(timelineDatum => {
+        timelineDataList.forEach((timelineDatum, idx) => {
             const timelineListItem =
                 timelineListItemTemplate.content.cloneNode(true)
 
@@ -123,6 +123,9 @@
                 timelineSkills.removeAttribute("hidden")
             }
             timelineList.appendChild(timelineListItem)
+            if (idx != timelineDataList.length - 1) {
+                timelineList.appendChild(document.createElement("hr"))
+            }
         })
     }
 

@@ -9,6 +9,10 @@ const skillData = {
             demo: "jsdemo.html",
         },
         {
+            img: "nodejs.png",
+            name: "NodeJS",
+        },
+        {
             img: "reactLogo.png",
             name: "React",
         }, {
@@ -31,6 +35,9 @@ const skillData = {
         {
             img: "Java-Logo.png",
             name: "Java",
+        },{
+            img: "Gradle-Logo.png",
+            name: "Gradle",
         },
         {
             img: "KotlinLogo.png",
@@ -74,9 +81,7 @@ const skillData = {
             name: "RPG Maker MZ",
             description: "Game Engine",
             link: "https://www.rpgmakerweb.com/products/rpg-maker-mz"
-        }, {
-            img: "nodejs.png",
-            name: "NodeJS",
-        }
+        },
+
     ]
 }
