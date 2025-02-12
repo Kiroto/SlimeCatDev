@@ -222,6 +222,21 @@
         modalElement.show();
     }
 
+    const skillGridToggleButton = document.getElementById("skill-grid-toggle-button")
+    const skillGridContainer = document.getElementById("skill-grid-container")
+
+    skillGridToggleButton.addEventListener("click", evt => {
+        if (skillGridContainer.classList.contains("open")) {
+            skillGridToggleButton.classList.remove("open")
+            skillGridContainer.classList.remove("open")
+            skillGridToggleButton.innerText = "Show Skills"
+        } else {
+            skillGridToggleButton.classList.add("open")
+            skillGridContainer.classList.add("open")
+            skillGridToggleButton.innerText = "Hide Skills"
+
+        }
+    })
 
     addTimelineData()
     addSkillData()
