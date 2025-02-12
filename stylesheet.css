@@ -111,11 +111,21 @@ body {
 }
 
 
-
+/* 
 @media only screen and (max-width: 800px) {
   .timeline-skill-list-column {
     display: none;
     width: 0px;
+  }
+} */
+
+@media only screen and (max-width: 990px) {
+  .timeline-list-item-content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .timeline-skill-list-column {
+    width: 100%;
   }
 }
 
@@ -125,7 +135,7 @@ body {
   }
 
   .timeline-skill {
-    width: 50%;
+    width: 3em;
   }
 
   .skill-row {

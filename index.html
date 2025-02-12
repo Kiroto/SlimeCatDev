@@ -84,8 +84,8 @@
     <!-- Templates -->
     <!-- Timeline item -->
     <template id="timeline-list-item-template">
-      <div class="container">
-        <div class="row">
+      <div class="container timeline-list-item-container">
+        <div class="row timeline-list-item-header">
           <div class="col-3 my-auto text-center timeline-img-container">
             <img
               src="https://picsum.photos/100"
@@ -93,16 +93,14 @@
             />
           </div>
           <div class="col my-auto">
-            <div class="timeline-list-item-header">
               <h3 class="timeline-list-item-title">Timeline Title</h3>
               <h6 class="timeline-list-item-description">
                 Software Engineering
               </h6>
               <h6 class="timeline-list-item-dates">Aug 2020 - Jan 2024</h6>
-            </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row timeline-list-item-content">
           <div class="col-2 container timeline-skill-list-column">
             <div class="row timeline-list-item-skill-list" hidden></div>
           </div>
