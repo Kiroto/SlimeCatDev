@@ -4,6 +4,22 @@ const skillData = {
     },
     skills: [
         {
+            img: "Java-Logo.png",
+            name: "Java",
+        },
+        {
+            img: "quarkus.png",
+            name: "Quarkus",
+        },
+        {
+            img: "mongodb.png",
+            name: "MongoDB",
+        },
+        {
+            img: "kafka.png",
+            name: "Apache Kafka",
+        },
+        {
             img: "jsLogo.png",
             name: "JavaScript",
             demo: "jsdemo.html",
@@ -32,10 +48,8 @@ const skillData = {
             img: "PythonLogo.webp",
             name: "Python",
         },
+
         {
-            img: "Java-Logo.png",
-            name: "Java",
-        },{
             img: "Gradle-Logo.png",
             name: "Gradle",
         },
@@ -84,4 +98,4 @@ const skillData = {
         },
 
     ]
-}
+};

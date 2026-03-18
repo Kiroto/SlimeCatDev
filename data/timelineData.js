@@ -4,6 +4,15 @@ const timelineData = {
     },
     entries: [
         {
+            img: "bpdLogo.png",
+            name: "Banco Popular Dominicano",
+            description: "Lead Backend Developer",
+            start: "Apr 2025",
+            end: "Current (Last updated March 2026)",
+            page: "bpd.html",
+            skills: ["Java", "Quarkus", "MongoDB", "Apache Kafka"]
+        },
+        {
             img: "ObitusGamesLogo.jpg",
             name: "Obitus Games",
             description: "Lead Audio Director; Game Developer",
