@@ -45,7 +45,7 @@ const skillData = {
             name: "Golang",
         },
         {
-            img: "PythonLogo.webp",
+            img: "PythonLogo.png",
             name: "Python",
         },
 

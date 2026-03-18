@@ -13,7 +13,7 @@ const timelineData = {
             skills: ["Java", "Quarkus", "MongoDB", "Apache Kafka"]
         },
         {
-            img: "ObitusGamesLogo.jpg",
+            img: "ObitusGamesLogo.png",
             name: "Obitus Games",
             description: "Lead Audio Director; Game Developer",
             start: "Feb 2023",
